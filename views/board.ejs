@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>The Dojo Message Board</title>
+    <link rel='stylesheet' href='/css/style.css' />
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Welcome to The Dojo Message Board <%= user_name %>!</h1> 
+        <div id="content_layer">
+            <form action="/submit_message" method="post">
+                <label for="message">Message:</label>
+                <textarea type="text" name="message" placeholder="Enter Message"></textarea>
+                <span>
+                    <input type="submit" value="Post">
+                </span>
+            </form>
+            <div id="errors">
+                <% if(typeof(error) != 'undefined'){ %>
+                    <h3 class="red"><%= error %></h3>
+                <% } %>
+            </div>
+            <div id="messages">
+                <% if(typeof(messages) != 'undefined' ) { %>
+                    <% for (var message in messages) { %>
+                        <p>Name: <%= messages[message]._user.name %></p>
+                        <p>Message: <%= messages[message].text %></p>
+                        <div class="comment_layer">
+                            <% for (var comment=0; comment<messages[message]._comments.length; comment++) { %>
+                                <% if(messages[message]._comments[comment]._user.name != 'undefined') { %>
+                                    <p>Name: <%= messages[message]._comments[comment]._user.name %></p>
+                                <% } %>
+                                <p>Comment: <%= messages[message]._comments[comment].text %></p>
+                            <% } %>
+                            <form action="/submit_comment" method="post">
+                                <input type="hidden" name="message_id" value="<%= messages[message]._id %>">
+                                <label for="comment">Comment:</label>
+                                <textarea type="text" name="comment" placeholder="Enter Comment"></textarea>
+                                <span>
+                                    <input type="submit" value="Comment">
+                                </span>
+                            </form>
+                        </div>
+                        <hr>
+                    <% } %>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

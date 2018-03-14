@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Message Board</title>
+    <link rel='stylesheet' href='/css/style.css' />
+</head>
+<body>
+    <div id="wrapper">
+        <h1>The Dojo Message Board: Login</h1> 
+        <div id="content_layer">
+            <form action="/login" id="add_user" method="post">
+                <label for="name">Your Name: 
+                    <input type="text" name="name" id="name" placeholder="Enter Name"></label>
+                <span>
+                    <input type="submit" name="add" value="Log in">
+                </span>
+            </form>
+            <div id="errors">
+                <% if(typeof(error) != 'undefined'){ %>
+                    <h3 class="red"><%= error %></h3>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

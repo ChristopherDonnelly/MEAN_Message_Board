@@ -1,0 +1,145 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#wrapper {
+    position: relative;
+    margin: 50px auto;
+    width: 970px;
+    text-align: center;
+}
+
+#content_layer {
+    width: 850px;
+    height: 580px;
+    border: 2px inset darkgray;
+    margin: 25px auto;
+    padding: 25px;
+    box-shadow: 3px 3px 5px lightgrey;
+    text-align: left;
+    overflow-y: auto;
+}
+
+#show_layer {
+    height: 450px;
+    overflow-y: auto;
+}
+
+a {
+    padding: 5px;
+}
+
+#content_layer p, #content_layer #nav a {
+    text-align: left;
+    padding: 10px;
+}
+
+#content_layer p {
+    font-size: 1.4em;
+}
+
+#content_layer #nav {
+    margin: 50px 0px 0px;
+}
+
+#content_layer form {
+    text-align: left;
+}
+
+#content_layer input[type="submit"] + #nav {
+    margin: 20px 0px 0px;
+}
+
+#content_layer label {
+    display: block;
+    text-align: left;
+    padding: 10px 0px;
+    font-size: 1.3em;
+}
+
+#content_layer label span {
+    vertical-align: top;
+}
+
+#content_layer input[type="text"], #content_layer input[type="email"], #content_layer input[type="password"], #content_layer select, #content_layer textarea {
+    width: 300px;
+    font-size: 0.8em;
+    padding: 3px;
+    display: block;
+}
+
+#content_layer textarea {
+    width: 80%;
+    height: 60px;
+}
+
+#wrapper>p {
+    width: 250px;
+}
+
+#labels {
+    vertical-align: top;
+    display: inline-block;
+    width: 70%;
+}
+
+#errorLayer {
+    position: relative;
+    vertical-align: top;
+    display: inline-block;
+    width: 25%;
+    padding-top: 1px;
+}
+
+input[type="submit"], button {
+    width: 115px;
+    height: 35px;
+    border-radius: 10px;
+    border: 1px solid darkgray;
+    background-color: white;
+    box-shadow: 3px 3px 10px lightgrey;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px grey;
+    cursor: pointer;
+    color: black;
+    margin: 5px 0px;
+}
+
+input[type="submit"]:hover, button:hover {
+    border: 1px solid darkgray;
+    background-color: lightskyblue;
+    color: white;
+    box-shadow: 3px 3px 10px lightgrey;
+    text-shadow: 1px 1px 2px grey;
+}
+
+.red {
+    color: red;
+}
+
+#content_layer #nav {
+    margin: 0px 0px 25px;
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.comment_layer {
+    margin-left: 50px;
+}
+
+hr {
+    margin: 15px 0px 10px;
+}
+
+#messages .comment_layer p, #messages .comment_layer label {
+    font-size: 1.2em;
+}
+
+#messages .comment_layer form {
+    padding-left: 9px;
+}
